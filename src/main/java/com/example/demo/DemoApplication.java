@@ -20,16 +20,28 @@ public class DemoApplication {
 	@ConfigurationProperties(value = "demo-properties", ignoreUnknownFields = false)
 	public static class DemoProperties {
 
-		private List<String> data;
-		
-		public void setData(List<String> data) {
-			this.data = data;
+		private List<String> nestedData;
+
+
+		private List<String> getNestedData() {
+			return nestedData;
 		}
-		
-		public List<String> getData() {
+
+		private void setNestedData(final List<String> nestedData) {
+			this.nestedData = nestedData;
+		}
+	}
+
+
+	public static class NestedProperty {
+		private String data;
+
+		private String getData() {
 			return data;
 		}
-		
+
+		private void setData(final String data) {
+			this.data = data;
+		}
 	}
-	
 }

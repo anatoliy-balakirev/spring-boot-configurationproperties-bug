@@ -1,4 +1,4 @@
 demo-properties:
-  data:
-    - "string4"
-    - "string5"
+  nested-data:
+    - data: "string4"
+    - data: "string5"
