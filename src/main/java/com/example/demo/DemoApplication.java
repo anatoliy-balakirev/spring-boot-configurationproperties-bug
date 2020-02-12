@@ -26,7 +26,7 @@ public class DemoApplication {
             return nestedData;
         }
 
-		public void setNestedData(final List<NestedProperty> nestedData) {
+        public void setNestedData(final List<NestedProperty> nestedData) {
             this.nestedData = nestedData;
         }
     }
@@ -35,11 +35,11 @@ public class DemoApplication {
     public static class NestedProperty {
         private String data;
 
-		public String getData() {
+        public String getData() {
             return data;
         }
 
-		public void setData(final String data) {
+        public void setData(final String data) {
             this.data = data;
         }
     }
