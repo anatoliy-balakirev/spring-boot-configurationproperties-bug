@@ -12,36 +12,35 @@ import org.springframework.stereotype.Component;
 @EnableConfigurationProperties
 public class DemoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
 
-	@Component
-	@ConfigurationProperties(value = "demo-properties", ignoreUnknownFields = false)
-	public static class DemoProperties {
+    @Component
+    @ConfigurationProperties(value = "demo-properties", ignoreUnknownFields = false)
+    public static class DemoProperties {
 
-		private List<String> nestedData;
+        private List<NestedProperty> nestedData;
+
+        public List<NestedProperty> getNestedData() {
+            return nestedData;
+        }
+
+		public void setNestedData(final List<NestedProperty> nestedData) {
+            this.nestedData = nestedData;
+        }
+    }
 
 
-		private List<String> getNestedData() {
-			return nestedData;
-		}
+    public static class NestedProperty {
+        private String data;
 
-		private void setNestedData(final List<String> nestedData) {
-			this.nestedData = nestedData;
-		}
-	}
+		public String getData() {
+            return data;
+        }
 
-
-	public static class NestedProperty {
-		private String data;
-
-		private String getData() {
-			return data;
-		}
-
-		private void setData(final String data) {
-			this.data = data;
-		}
-	}
+		public void setData(final String data) {
+            this.data = data;
+        }
+    }
 }
